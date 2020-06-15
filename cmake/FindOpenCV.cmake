@@ -20,7 +20,7 @@
 # This file should be removed when CMake will provide an equivalent
 
 #--- Select exactly ONE OpenCV 2 base directory to avoid mixing different version headers and libs
-set(OpenCV_ROOT_INC_DIR "/opt/conda/include/opencv4")
+set(OpenCV_ROOT_INC_DIR "/usr/local/include/opencv4")
 
 #--- DEBUG
 #message(STATUS "OpenCV2_ROOT_INC_DIR: ${OpenCV2_ROOT_INC_DIR}")
@@ -49,7 +49,7 @@ set(OpenCV2_INCLUDE_DIRS
     ${OpenCV2_FLANN_INCLUDE_DIR})
 
 # absolute path to all libraries 
-set(OPENCV2_LIBRARY_SEARCH_PATHS "/opt/conda/lib")
+set(OPENCV2_LIBRARY_SEARCH_PATHS "/usr/local/lib")
 
 #--- Specify where DLL is searched for
 #message(STATUS "OPENCV2_LIBRARY_SEARCH_PATHS ${OPENCV2_LIBRARY_SEARCH_PATHS}")

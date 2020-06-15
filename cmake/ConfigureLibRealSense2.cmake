@@ -14,8 +14,8 @@ include_directories( ${LIBUSB_1_INCLUDE_DIRS})
 
 
 # librealsense
-set(LIBREALSENSE2_INCLUDE_DIR "/home/anushl9o5/librealsense/include")
-set(LIBREALSENSE2_LIBRARY "/usr/local/lib/librealsense2.so")
+set(LIBREALSENSE2_INCLUDE_DIR "/usr/include/librealsense2")
+set(LIBREALSENSE2_LIBRARY "/usr/lib/x86_64-linux-gnu/librealsense2.so")
 include_directories(${LIBREALSENSE2_INCLUDE_DIR})
 list(APPEND LIBRARIES ${LIBREALSENSE2_LIBRARY})
 

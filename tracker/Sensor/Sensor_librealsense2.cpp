@@ -39,7 +39,7 @@ using namespace std;
 
 rs2::config cfg;
 rs2::context ctx;
-rs2::pipeline pipe(ctx);
+rs2::pipeline piped(ctx);
 rs2_intrinsics depth_intrin, color_intrin;
 rs2_extrinsics depth_to_color;
 rs2::stream_profile depth_stream;
@@ -72,7 +72,7 @@ int SensorLibRealSense2::initialize() {
 
     printf("Enabled Streams:Depth and Color\n");
 
-    rs2::pipeline_profile pipe_profile = pipe.start(cfg);
+    rs2::pipeline_profile pipe_profile = piped.start(cfg);
 
     printf("Device Started\n");
 
@@ -133,7 +133,7 @@ bool SensorLibRealSense2::fetch_streams(DataFrame &frame) {
     if(frame.color.empty())
         frame.color = cv::Mat(cv::Size(D_width/2, D_height/2), CV_8UC3, cv::Scalar(0, 0, 0));
 
-    pipe.poll_for_frames(&frames);
+    piped.poll_for_frames(&frames);
     const uint16_t * depth_image = (const uint16_t *)frames.get_depth_frame().get_data();
     const uint8_t * color_image = (const uint8_t *)frames.get_color_frame().get_data();
 
